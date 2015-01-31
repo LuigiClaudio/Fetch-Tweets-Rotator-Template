@@ -30,7 +30,7 @@ class FetchTweets_Template_Rotator extends FetchTweets_Template_Rotator_Base {
 			'id'	=>	$this->_sIDAttribute,
 		);
 		
-		add_action( 'wp_footer', array( $this, '_replyToInsertScript' ) );
+		add_action( 'wp_footer', array( $this, '_replyToInsertScript' ), 999 );
 		return "<div " . $this->_generateAttributes( $_aAttributes_Wrapper ) . "/>" . PHP_EOL
 				. "<div " . $this->_generateAttributes( $_aAttributes ) . "/>" . PHP_EOL
 					. $this->_getTweets( $aTweets, $_aArgs ). PHP_EOL
